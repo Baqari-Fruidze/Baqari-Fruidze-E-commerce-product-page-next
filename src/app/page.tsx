@@ -1,5 +1,9 @@
-import Burger from "./components/Burger";
+import Carusel from "./components/Carusel";
 
 export default function Home() {
-  return <div></div>;
+  return (
+    <div>
+      <Carusel />
+    </div>
+  );
 }
