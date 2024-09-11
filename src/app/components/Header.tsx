@@ -2,9 +2,12 @@
 import Image from "next/image";
 import Burger from "./Burger";
 import useBurgerShow from "@/usestore/BurgerShow";
+import Cart from "./cart";
+import useCartShow from "@/usestore/CartShow";
 
 export default function Header() {
   const burgerShow = useBurgerShow();
+  const cartShow = useCartShow();
   return (
     <>
       <div className="Parent px-[24px] py-[24px] flex items-center justify-between relative max-w-[500px] mx-[auto] my-[0] des:hidden">
@@ -29,6 +32,7 @@ export default function Header() {
             width={21.8}
             height={20}
             alt="cart icon"
+            onClick={() => cartShow.setTrue()}
           ></Image>
           <Image
             src={"/images/image-avatar.png"}
@@ -39,6 +43,7 @@ export default function Header() {
         </div>
       </div>
       {burgerShow.burgerShow ? <Burger /> : null}
+      {cartShow.cartShow ? <Cart /> : null}
     </>
   );
 }
