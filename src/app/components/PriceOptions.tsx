@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import useCount from "@/usestore/UseCount";
 
 export default function PriceOptions() {
+  const usecount = useCount();
   return (
     <div className="parent flex flex-col">
       <div className="mb-[16px]">
@@ -24,13 +27,17 @@ export default function PriceOptions() {
             width={12}
             height={3}
             alt="minus icon"
+            onClick={() => usecount.decrement()}
           ></Image>
-          <span className="text-[#1D2026] text-[16px] font-bold">0</span>
+          <span className="text-[#1D2026] text-[16px] font-bold">
+            {usecount.count}
+          </span>
           <Image
             src={"/images/icon-plus.svg"}
             width={12}
             height={12}
             alt="plus icon"
+            onClick={() => usecount.increment()}
           ></Image>
         </div>
       </div>

@@ -2,12 +2,13 @@
 import Image from "next/image";
 import Burger from "./Burger";
 import useBurgerShow from "@/usestore/BurgerShow";
-import Cart from "./cart";
 import useCartShow from "@/usestore/CartShow";
+import Cart from "./Cart";
 
 export default function Header() {
   const burgerShow = useBurgerShow();
   const cartShow = useCartShow();
+  console.log(cartShow.cartShow);
   return (
     <>
       <div className="Parent px-[24px] py-[24px] flex items-center justify-between relative max-w-[500px] mx-[auto] my-[0] des:hidden">
