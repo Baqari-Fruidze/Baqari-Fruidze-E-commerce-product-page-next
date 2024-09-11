@@ -7,7 +7,7 @@ export default function Header() {
   const burgerShow = useBurgerShow();
   return (
     <>
-      <div className="Parent px-[24px] py-[24px] flex items-center justify-between relative">
+      <div className="Parent px-[24px] py-[24px] flex items-center justify-between relative max-w-[500px] mx-[auto] my-[0]">
         <div className="iconsCon flex items-center gap-[16px]">
           <Image
             src={`/images/icon-menu.svg`}
