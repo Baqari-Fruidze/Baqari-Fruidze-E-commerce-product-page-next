@@ -15,7 +15,7 @@ export default function Carusel() {
   const picIndex = index();
   return (
     <>
-      <div className="caruselParent h-[300px] w-full relative">
+      <div className="caruselParent h-[300px] w-full relative des:hidden">
         <Image
           src={`${picArr[picIndex.num]}`}
           width={375}
