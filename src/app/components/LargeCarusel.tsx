@@ -2,9 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import caruselIndex from "@/usestore/LargeCaruselIndex";
+import popUp from "@/usestore/Popup";
 
 export default function LargeCarusel() {
   const picindex = caruselIndex();
+  const popup = popUp();
   const picArr = [
     "/images/image-product-1.jpg",
     "/images/image-product-2.jpg",
@@ -19,7 +21,13 @@ export default function LargeCarusel() {
           width={445}
           height={445}
           alt="product image"
-          style={{ borderRadius: "15px" }}
+          style={{
+            borderRadius: "15px",
+            position: popup.show ? "absolute" : "static",
+            top: popup.show ? "250px" : "static",
+            right: popup.show ? "45%" : "static",
+          }}
+          onClick={() => popup.setTrue()}
         ></Image>
       </div>
       <div className=" des:flex des:gap-[31px] des:items-center">

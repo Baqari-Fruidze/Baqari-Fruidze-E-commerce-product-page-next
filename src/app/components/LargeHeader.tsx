@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import useCartShow from "@/usestore/CartShow";
 
 export default function LargeHeader() {
+  const cartShow = useCartShow();
   return (
     <div className=" parent hidden des:flex des:justify-between des:max-w-[1500px] des:mx-[auto] my-[0] des:border-b des:pb-[45px] des:border-b-grey des:mb-[90px]">
       <div className="logoTextCon flex gap-[60px] items-center">
@@ -25,6 +28,7 @@ export default function LargeHeader() {
           width={21.8}
           height={20}
           alt="cart icon"
+          onClick={() => cartShow.setTrue()}
         ></Image>
         <Image
           src={"/images/image-avatar.png"}

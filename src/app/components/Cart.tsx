@@ -7,7 +7,7 @@ export default function Cart() {
   const usecount = useCount();
   const total = usecount.count * 125;
   return (
-    <div className=" parent bg-[#fff] min-h-[256px] rounded-[10px] max-w-[485px] px-[24px] pt-[24px] pb-[22px] absolute top-[100px]  left-[8px] right-[7px] z-[99] mx-[auto] my-[0]">
+    <div className=" parent bg-custom min-h-[256px] rounded-[10px] max-w-[485px] px-[24px] pt-[24px] pb-[22px] absolute top-[100px]  left-[8px] right-[7px] z-[99] mx-[auto] my-[0] des:right-[-922px]">
       <h1 className="text-[16px] text-[#1D2026] font-bold pb-[27px] border-b border-[#E4E9F2]">
         Cart
       </h1>

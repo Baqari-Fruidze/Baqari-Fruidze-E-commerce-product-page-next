@@ -6,10 +6,10 @@ export default function Texts() {
       <span className="text-[#FF7E1B] text-[12px] font-bold tracking-[1.846px] des:text-[13px]">
         Sneaker Company
       </span>
-      <h1 className="text-[#1D2026] text-[28px] font-bold leading-[32px] des:text-[44px]">
+      <h1 className="text-[#1D2026] text-[28px] font-bold leading-[32px] des:text-[44px] des:w-[20ch] des:leading-[40px]">
         Fall Limited Edition Sneakers
       </h1>
-      <p className="text-[15px] text-[#69707D] font-light leading-[25px] des:text-[16px]">
+      <p className="text-[15px] text-[#69707D] font-light leading-[25px] des:text-[16px] des:w-[50ch]">
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they’ll withstand everything the
         weather can offer.
