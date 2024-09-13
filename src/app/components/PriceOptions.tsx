@@ -8,7 +8,7 @@ export default function PriceOptions() {
   return (
     <div className="parent flex flex-col">
       <div className="mb-[16px]">
-        <div className="PriceCon flex justify-between items-center mb-[26px]">
+        <div className="PriceCon flex justify-between items-center mb-[26px] des:flex-col des:items-start des:mb-[32px]">
           <div className="flex items-center gap-[16px]">
             <span className="text-[#1D2026] text-[28px] font-bold">
               $125.00
@@ -21,7 +21,7 @@ export default function PriceOptions() {
             $250.00
           </span>
         </div>
-        <div className="plusAndMinusCon flex items-center justify-between rounded-[10px] px-[24px] bg-[#F6F8FD] py-[18px] ">
+        <div className="plusAndMinusCon flex items-center justify-between rounded-[10px] px-[24px] bg-[#F6F8FD] py-[18px]  ">
           <Image
             src={"/images/icon-minus.svg"}
             width={12}
@@ -41,7 +41,6 @@ export default function PriceOptions() {
           ></Image>
         </div>
       </div>
-
       <div className="AddToCartCon bg-[#FF7E1B] [box-shadow:0px_20px_50px_-20px_#FF7E1B] rounded-[10px] py-[20px] flex justify-center items-center">
         <Image
           src={"/images/icon-cart.svg"}

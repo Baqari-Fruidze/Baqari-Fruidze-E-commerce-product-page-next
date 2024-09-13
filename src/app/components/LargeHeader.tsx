@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function LargeHeader() {
   return (
-    <div className=" parent hidden des:flex des:justify-between des:max-w-[1500px] des:mx-[auto] my-[0]">
+    <div className=" parent hidden des:flex des:justify-between des:max-w-[1500px] des:mx-[auto] my-[0] des:border-b des:pb-[45px] des:border-b-grey des:mb-[90px]">
       <div className="logoTextCon flex gap-[60px] items-center">
         <Image
           src={"/images/logo.svg"}
