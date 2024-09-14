@@ -4,7 +4,7 @@ import Image from "next/image";
 import caruselIndex from "@/usestore/LargeCaruselIndex";
 import popUp from "@/usestore/Popup";
 
-export default function LargeCarusel() {
+export default function LargeCarusel({ show }: { show: boolean }) {
   const picindex = caruselIndex();
   const popup = popUp();
   const picArr = [
@@ -13,6 +13,7 @@ export default function LargeCarusel() {
     "/images/image-product-3.jpg",
     "/images/image-product-4.jpg",
   ];
+  console.log(show);
   return (
     <div className=" hiden des:flex des:flex-col des:gap-[32px]">
       <div className="picCon">
@@ -23,14 +24,19 @@ export default function LargeCarusel() {
           alt="product image"
           style={{
             borderRadius: "15px",
-            position: popup.show ? "absolute" : "static",
-            top: popup.show ? "250px" : "static",
-            right: popup.show ? "45%" : "static",
+            position: show ? "absolute" : "static",
+            top: show ? "250px" : "static",
+            right: show ? "45%" : "static",
           }}
           onClick={() => popup.setTrue()}
         ></Image>
       </div>
-      <div className=" des:flex des:gap-[31px] des:items-center">
+      <div
+        className={`des:flex des:gap-[31px] des:items-center ${
+          show ? "absolute" : "static"
+        } ${show ? "bottom-[100px]" : "static"}
+        ${show ? "right-[45%]" : "static"}`}
+      >
         {picArr.map((item, index) => (
           <Image
             src={`${item}`}

@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <div className=" parent flex flex-col gap-[24px] max-w-[500px] mx-[auto] my-[0] relative des:flex-row des:max-w-[1500px] des:gap-[125px] des:items-center">
       <Carusel />
-      <LargeCarusel />
+      <LargeCarusel show={false} />
       {popup.show ? (
         <div className="w-screen left-[-200px] min-h-screen bg-[rgba(0,0,0,0.4)] absolute">
-          <LargeCarusel />
+          <LargeCarusel show={popup.show}></LargeCarusel>
         </div>
       ) : null}
 
