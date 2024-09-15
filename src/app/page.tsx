@@ -4,6 +4,8 @@ import Carusel from "./components/Carusel";
 import LargeCarusel from "./components/LargeCarusel";
 import PriceOptions from "./components/PriceOptions";
 import Texts from "./components/Texts";
+import ArrowRight from "./components/ArrowRight";
+import ArrowLeft from "./components/ArrowLeft";
 
 export default function Home() {
   const popup = popUp();
@@ -13,7 +15,11 @@ export default function Home() {
       <LargeCarusel show={false} />
       {popup.show ? (
         <div className="w-screen left-[-200px] min-h-screen bg-[rgba(0,0,0,0.4)] absolute">
-          <LargeCarusel show={popup.show}></LargeCarusel>
+          <LargeCarusel
+            show={popup.show}
+            arrowRight={<ArrowRight />}
+            arrowLeft={<ArrowLeft />}
+          ></LargeCarusel>
         </div>
       ) : null}
 
