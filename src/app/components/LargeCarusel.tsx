@@ -1,17 +1,16 @@
 "use client";
 import React, { ReactNode } from "react";
 import Image from "next/image";
-import caruselIndex from "@/usestore/LargeCaruselIndex";
 import popUp from "@/usestore/Popup";
+import useCount from "@/usestore/UseCount";
 
 export default function LargeCarusel({
-  show,
   children,
 }: {
   show: boolean;
   children: ReactNode;
 }) {
-  const picindex = caruselIndex();
+  const picindex = useCount();
   const popup = popUp();
   const picArr = [
     "/images/image-product-1.jpg",
@@ -21,6 +20,8 @@ export default function LargeCarusel({
   ];
   const firstChild = React.Children.toArray(children)[0];
   const secondChild = React.Children.toArray(children)[1];
+  const thirdChild = React.Children.toArray(children)[2];
+  console.log(picindex.count);
   return (
     <div className=" hidden des:flex des:flex-col des:gap-[32px]">
       <div className={`picCon ${popup.show ? "relative" : "static"} `}>
@@ -34,6 +35,7 @@ export default function LargeCarusel({
         ></Image>
         {firstChild}
         {secondChild}
+        {thirdChild}
       </div>
       <div className={`des:flex des:gap-[31px] des:items-center `}>
         {picArr.map((item, index) => (
@@ -44,6 +46,7 @@ export default function LargeCarusel({
             alt="product pic"
             key={index}
             style={{ borderRadius: "10px" }}
+            onClick={() => picindex.incrementWith(index)}
           ></Image>
         ))}
       </div>

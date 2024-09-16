@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import useStore from "@/usestore/PicIndex";
+import useCount from "@/usestore/UseCount";
 import popUp from "@/usestore/Popup";
 
 export default function ArrowRight() {
-  const picIndex = useStore();
+  const picIndex = useCount();
   const popup = popUp();
   return (
     <div
@@ -13,7 +13,7 @@ export default function ArrowRight() {
       ${
         popup.show ? "right-[-20px]" : "right-[6%]"
       } flex items-center justify-center `}
-      onClick={() => picIndex.increase()}
+      onClick={() => picIndex.increment()}
     >
       <Image
         src={"/images/icon-next.svg"}

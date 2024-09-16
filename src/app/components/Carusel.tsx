@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import ArrowRight from "./ArrowRight";
 import ArrowLeft from "./ArrowLeft";
-import index from "@/usestore/PicIndex";
+import useCount from "@/usestore/UseCount";
 
 export default function Carusel() {
   const picArr = [
@@ -12,12 +12,12 @@ export default function Carusel() {
     "/images/image-product-3-thumbnail.jpg",
     "/images/image-product-4-thumbnail.jpg",
   ];
-  const picIndex = index();
+  const picIndex = useCount();
   return (
     <>
       <div className="caruselParent h-[300px] w-full relative des:hidden">
         <Image
-          src={`${picArr[picIndex.num]}`}
+          src={`${picArr[picIndex.count]}`}
           width={375}
           height={300}
           alt="image of pdocut"

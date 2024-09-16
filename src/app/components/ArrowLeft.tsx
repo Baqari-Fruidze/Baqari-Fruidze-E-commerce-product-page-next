@@ -1,19 +1,20 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import useStore from "@/usestore/PicIndex";
+import useCount from "@/usestore/UseCount";
 import popUp from "@/usestore/Popup";
 
 export default function ArrowRight() {
-  const picIndex = useStore();
+  const picIndex = useCount();
   const popup = popUp();
+  console.log(picIndex.count);
   return (
     <div
       className={`w-[40px] h-[40px] rounded-[50%] bg-[#fff] absolute
          top-[50%]  ${
            popup.show ? "left-[-4%]" : "left-[6%]"
          } flex items-center justify-center `}
-      onClick={() => picIndex.decrease()}
+      onClick={() => picIndex.decrement()}
     >
       <Image
         src={"/images/icon-previous.svg"}
