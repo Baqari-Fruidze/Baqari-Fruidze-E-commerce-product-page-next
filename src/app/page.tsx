@@ -10,16 +10,15 @@ import ArrowLeft from "./components/ArrowLeft";
 export default function Home() {
   const popup = popUp();
   return (
-    <div className=" parent flex flex-col gap-[24px] max-w-[500px] mx-[auto] my-[0] relative des:flex-row des:max-w-[1500px] des:gap-[125px] des:items-center">
+    <div className=" parent flex flex-col gap-[24px] max-w-[500px] mx-[auto] my-[0]  des:flex-row des:max-w-[1500px] des:gap-[125px] des:items-center">
       <Carusel />
       <LargeCarusel show={false} />
       {popup.show ? (
-        <div className="w-screen left-[-200px] min-h-screen bg-[rgba(0,0,0,0.4)] absolute">
-          <LargeCarusel
-            show={popup.show}
-            arrowRight={<ArrowRight />}
-            arrowLeft={<ArrowLeft />}
-          ></LargeCarusel>
+        <div className="w-screen top-0 left-0 min-h-screen bg-[rgba(0,0,0,0.4)] absolute flex justify-center items-center">
+          <LargeCarusel show={popup.show}>
+            <ArrowRight />
+            <ArrowLeft />
+          </LargeCarusel>
         </div>
       ) : null}
 

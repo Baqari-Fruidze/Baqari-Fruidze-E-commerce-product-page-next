@@ -1,10 +1,16 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import Image from "next/image";
 import caruselIndex from "@/usestore/LargeCaruselIndex";
 import popUp from "@/usestore/Popup";
 
-export default function LargeCarusel({ show }: { show: boolean }) {
+export default function LargeCarusel({
+  show,
+  children,
+}: {
+  show: boolean;
+  children: ReactNode;
+}) {
   const picindex = caruselIndex();
   const popup = popUp();
   const picArr = [
@@ -13,30 +19,23 @@ export default function LargeCarusel({ show }: { show: boolean }) {
     "/images/image-product-3.jpg",
     "/images/image-product-4.jpg",
   ];
-  console.log(show);
+  const firstChild = React.Children.toArray(children)[0];
+  const secondChild = React.Children.toArray(children)[1];
   return (
-    <div className=" hiden des:flex des:flex-col des:gap-[32px]">
-      <div className="picCon">
+    <div className=" hidden des:flex des:flex-col des:gap-[32px]">
+      <div className={`picCon ${popup.show ? "relative" : "static"} `}>
         <Image
           src={`${picArr[picindex.count]}`}
-          width={445}
-          height={445}
+          width={`${popup.show ? "550" : "445"}`}
+          height={`${popup.show ? "550" : "445"}`}
           alt="product image"
-          style={{
-            borderRadius: "15px",
-            position: show ? "absolute" : "static",
-            top: show ? "250px" : "static",
-            right: show ? "45%" : "static",
-          }}
           onClick={() => popup.setTrue()}
+          style={{ borderRadius: "15px" }}
         ></Image>
+        {firstChild}
+        {secondChild}
       </div>
-      <div
-        className={`des:flex des:gap-[31px] des:items-center ${
-          show ? "absolute" : "static"
-        } ${show ? "bottom-[100px]" : "static"}
-        ${show ? "right-[45%]" : "static"}`}
-      >
+      <div className={`des:flex des:gap-[31px] des:items-center `}>
         {picArr.map((item, index) => (
           <Image
             src={`${item}`}
