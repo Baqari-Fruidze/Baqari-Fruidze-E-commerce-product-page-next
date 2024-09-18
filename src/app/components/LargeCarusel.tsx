@@ -39,10 +39,7 @@ export default function LargeCarusel({
       </div>
       <div className={`des:flex des:gap-[31px] des:items-center `}>
         {picArr.map((item, index) => (
-          <div
-            key={index}
-            className="w-[88px] h-[88px] border-[2px] border-[solid] border-[#FF7E1B] rounded-[10px]"
-          >
+          <div key={index} className="w-[88px] h-[88px]   rounded-[10px]">
             <Image
               src={`${item}`}
               width={88}
@@ -51,6 +48,11 @@ export default function LargeCarusel({
               key={index}
               style={{ borderRadius: "10px" }}
               onClick={() => picindex.incrementWith(index)}
+              className={`${
+                picindex.count === index
+                  ? "border-[2px] border-[solid] border-[#FF7E1B]"
+                  : null
+              }`}
             ></Image>
           </div>
         ))}
