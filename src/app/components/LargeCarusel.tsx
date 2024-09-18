@@ -39,7 +39,14 @@ export default function LargeCarusel({
       </div>
       <div className={`des:flex des:gap-[31px] des:items-center `}>
         {picArr.map((item, index) => (
-          <div key={index} className="w-[88px] h-[88px]   rounded-[10px]">
+          <div
+            key={index}
+            className={`w-[88px] h-[88px] rounded-[10px] relative hover:before:content-[' '] hover:before:absolute hover:before:inset-0 hover:before:bg-custom-gradient hover:before:bg-cover hover:before:bg-center hover:before:bg-no-repeat hover:before:w-[88px] hover:before:h-[88px] ${
+              picindex.count === index
+                ? 'before:content-[" "] before:absolute before:inset-0 before:bg-custom-gradient before:bg-cover before:bg-center before:bg-no-repeat before:w-[88px] before:h-[88px]'
+                : ""
+            }`}
+          >
             <Image
               src={`${item}`}
               width={88}
