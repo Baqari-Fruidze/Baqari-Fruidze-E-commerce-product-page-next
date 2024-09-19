@@ -15,7 +15,7 @@ export default function Home() {
       <Carusel />
       <LargeCarusel />
       {popup.show ? (
-        <div className="w-screen top-0 left-0 min-h-screen bg-[rgba(0,0,0,0.4)] absolute flex justify-center items-center">
+        <div className="w-screen top-0 left-0 min-h-screen bg-[rgba(0,0,0,0.7)] absolute flex justify-center items-center">
           <LargeCarusel show={popup.show}>
             <ArrowRight />
             <ArrowLeft />
