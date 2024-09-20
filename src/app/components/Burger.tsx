@@ -5,7 +5,7 @@ import useBurgerShow from "@/usestore/BurgerShow";
 export default function Burger() {
   const burgerShow = useBurgerShow();
   return (
-    <div className="Cover bg-[rgba(0,0,0,0.4)] w-full min-h-screen fixed top-0 z-50">
+    <div className="Cover bg-[rgba(0,0,0,0.7)] w-full min-h-screen fixed top-0 z-50">
       <div className=" min-h-screen bg-[#fff] w-3/5 flex flex-col gap-[53px] pl-[24px] pt-[24px]">
         <Image
           src={"/images/icon-close.svg"}
