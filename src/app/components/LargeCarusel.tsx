@@ -6,6 +6,7 @@ import useCount from "@/usestore/UseCount";
 
 export default function LargeCarusel({
   children,
+  show,
 }: {
   show: boolean;
   children: ReactNode;
