@@ -13,10 +13,12 @@ export default function Home() {
   return (
     <div className=" parent flex flex-col gap-[24px] max-w-[500px] mx-[auto] my-[0]  des:flex-row des:max-w-[1500px] des:gap-[125px] des:items-center">
       <Carusel />
-      <LargeCarusel />
+      <LargeCarusel>
+        <></>
+      </LargeCarusel>
       {popup.show ? (
         <div className="w-screen top-0 left-0 min-h-screen bg-[rgba(0,0,0,0.7)] absolute flex justify-center items-center">
-          <LargeCarusel show={popup.show}>
+          <LargeCarusel>
             <ArrowRight />
             <ArrowLeft />
             <CloseIcon />

@@ -1,4 +1,3 @@
-import { count } from "console";
 import { create } from "zustand";
 
 interface Ttype {

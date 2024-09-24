@@ -4,13 +4,7 @@ import Image from "next/image";
 import popUp from "@/usestore/Popup";
 import useCount from "@/usestore/UseCount";
 
-export default function LargeCarusel({
-  children,
-  show,
-}: {
-  show: boolean;
-  children: ReactNode;
-}) {
+export default function LargeCarusel({ children }: { children: ReactNode }) {
   const picindex = useCount();
   const popup = popUp();
   const picArr = [
@@ -22,7 +16,7 @@ export default function LargeCarusel({
   const firstChild = React.Children.toArray(children)[0];
   const secondChild = React.Children.toArray(children)[1];
   const thirdChild = React.Children.toArray(children)[2];
-  console.log(picindex.count);
+
   return (
     <div className=" hidden des:flex des:flex-col des:gap-[32px]">
       <div className={`picCon ${popup.show ? "relative" : "static"} `}>
